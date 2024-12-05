@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function loginAdmin()
     {
-       // dd(bcrypt(value: '123456789'));
+    //    dd(bcrypt(value: '12345'));
         return view(view: 'login');
     }
 

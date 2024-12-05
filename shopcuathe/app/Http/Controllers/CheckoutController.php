@@ -48,6 +48,7 @@ class CheckoutController extends Controller
         $data['shipping_notes'] = $request -> shipping_notes;
         $data['shipping_email'] = $request -> shipping_email;
         $data['shipping_address'] = $request -> shipping_address;
+        $data['customer_id'] = Session::get('customer_id');
   
         $shipping_id = DB::table('tbl_shipping') -> insertGetId($data);
   
@@ -76,7 +77,7 @@ class CheckoutController extends Controller
             return Redirect('/');
         }else
         {
-            return Redirect('/login-checkout');
+            return Redirect('/dangkiuser');
         }
     }
     public function dangkiuser()
@@ -130,6 +131,7 @@ class CheckoutController extends Controller
             echo 'Thanh toán thẻ ghi nợ';
         }
 
+        
         //return Redirect('/payment');
     }
     
